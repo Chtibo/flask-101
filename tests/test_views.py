@@ -8,7 +8,7 @@ class TestViews(TestCase):
         return app
 
     def test_products_json(self):
-        response = self.client.get("/api/v1/products")
+        response = self.client.get("/api/v1/products/")
         products = response.json
         self.assertIsInstance(products, list)
         print(len(products))
@@ -37,7 +37,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 404)
 
     def test_add_json(self):
-        response = self.client.post("/api/v1/products")
+        response = self.client.post("/api/v1/products/")
         self.assertEqual(response.status_code, 201)
 
 

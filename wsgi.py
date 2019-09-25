@@ -8,6 +8,7 @@ PRODUCTS = [
         { 'id': 2, 'name': 'Socialive.tv' },
         { 'id': 3, 'name': 'Me' }
     ]
+
 print('list')
 print(PRODUCTS)
 @app.route('/')
@@ -35,8 +36,8 @@ def delete_product(id):
             return '', 204
     return '', 404
 
-@app.route('/api/v1/products', methods=["POST"])
+@app.route('/api/v1/products/', methods=["POST"])
 def add_products():
     PRODUCTS.append({"id": 4 ,"name" : "Here"})
-    return '', 201
+    return "", 201
 
