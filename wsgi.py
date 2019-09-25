@@ -1,6 +1,7 @@
 # wsgi.py
-from flask import Flask, jsonify, abort
+from flask import Flask, jsonify, abort, request
 app = Flask(__name__)
+
 
 PRODUCTS = [
         { 'id': 1, 'name': 'Skello' },
@@ -13,7 +14,7 @@ print(PRODUCTS)
 def hello():
     return "Hello World! You're the best"
 
-@app.route('/api/v1/products')
+@app.route('/api/v1/products/')
 def get_products():
     print('len')
     return jsonify(PRODUCTS), 200
